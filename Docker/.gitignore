@@ -1,3 +1,3 @@
 .env
-Docker/nginx/1.11/conf.d/*
+nginx/1.11/conf.d/*
 var/*
