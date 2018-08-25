@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+    php72:
+        build: "./php/7.2"
+        container_name: "${PROJECT_NAME}-php72"
+        hostname: "${PROJECT_NAME}-php72"
+        working_dir: "/var/www"
+        restart: "no"
+        environment:
+            USER_UID: "${USER_UID}"
+            USER_GID: "${USER_GID}"
+            XDEBUG_CONFIG: "${XDEBUG_CONFIG}"
+            PHP_IDE_CONFIG: "${PHP_IDE_CONFIG}"
+        volumes:
+            - "${PATH_PROJECT}:/var/www"
+            # ssh git auth
+            - "$SSH_AUTH_SOCK:/ssh-agent"
+            - "~/.ssh/id_rsa:/home/www-data/private_key"
+            # bitbucket auth
+            - "~/.ssh:/home/www-data/.ssh"
+            - "~/.composer:/home/www-data/.composer"
+        extra_hosts:
+            - "${PROJECT_HOST}:${REMOTE_HOST}"
+        networks:
+            - "default"
