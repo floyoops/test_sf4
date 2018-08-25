@@ -16,3 +16,6 @@ cd Docker && ./run.sh -f
 cd Docker && ./php72.sh
 php -v
 ```
+
+### test url
+go to http://test.local

@@ -1,6 +1,18 @@
 version: '3'
 
 services:
+    #portainer
+    portainer:
+        image: "portainer/portainer"
+        container_name: "${PROJECT_NAME}-portainer"
+        restart: "no"
+        ports:
+            - "${PORTAINER_PORT}:9000"
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+            - "./var/portainer-data:/data"
+        networks:
+            - "default"
     php72:
         build: "./php/7.2"
         container_name: "${PROJECT_NAME}-php72"
@@ -22,5 +34,22 @@ services:
             - "~/.composer:/home/www-data/.composer"
         extra_hosts:
             - "${PROJECT_HOST}:${REMOTE_HOST}"
+        networks:
+            - "default"
+
+    nginx:
+        build: "./nginx/1.11"
+        container_name: "${PROJECT_NAME}-nginx"
+        hostname: "${PROJECT_NAME}-nginx"
+        depends_on:
+            - "php72"
+        restart: "no"
+        ports:
+            - "${HTTP_PORT}:80"
+        environment:
+            USER_UID: "${USER_UID}"
+            USER_GID: "${USER_GID}"
+        volumes:
+            - "${PATH_PROJECT}:/var/www"
         networks:
             - "default"
