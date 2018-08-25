@@ -1,8 +1,10 @@
 # Test sf4
 
 ## Quick start
-add test.local in your /etc/hosts
-Copy Docker/.env.dist to Docker/.env
+Add test.local in your /etc/hosts
+```shell
+cp Docker/.env.dist Docker/.env
+```
 
 ### Run docker
 ```shell
