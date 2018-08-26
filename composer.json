@@ -11,7 +11,12 @@
         "symfony/yaml": "*"
     },
     "require-dev": {
-        "symfony/dotenv": "*"
+        "symfony/dotenv": "*",
+        "behat/behat": "^3.5",
+        "behat/mink-extension": "^2.3",
+        "behat/mink-goutte-driver": "^1.2",
+        "behat/symfony2-extension": "^2.1",
+        "symfony/test-pack": "^1.0"
     },
     "config": {
         "preferred-install": {
@@ -53,8 +58,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false,
-            "require": "4.1.*"
+            "allow-contrib": false
         }
     }
 }
