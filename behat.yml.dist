@@ -4,9 +4,19 @@ default:
             contexts:
                 - FeatureContext:
                     kernel: '@kernel'
+                - behatch:context:browser
+                - behatch:context:json
+                - behatch:context:rest
 
     extensions:
+        Behatch\Extension: ~
         Behat\Symfony2Extension:
             kernel:
                 bootstrap: features/bootstrap/bootstrap.php
                 class: App\Kernel
+        Behat\MinkExtension:
+            base_url: 'http://test.local'
+            files_path: '%paths.base%/features'
+            sessions:
+                default:
+                    goutte: ~
