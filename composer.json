@@ -11,11 +11,12 @@
         "symfony/yaml": "*"
     },
     "require-dev": {
-        "symfony/dotenv": "*",
         "behat/behat": "^3.5",
         "behat/mink-extension": "^2.3",
         "behat/mink-goutte-driver": "^1.2",
         "behat/symfony2-extension": "^2.1",
+        "behatch/contexts": "^3.2",
+        "symfony/dotenv": "*",
         "symfony/test-pack": "^1.0"
     },
     "config": {
