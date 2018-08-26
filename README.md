@@ -14,7 +14,8 @@ cd Docker && ./run.sh -f
 ### go bash php
 ```shell
 cd Docker && ./php72.sh
-php -v
+cp .env.dist .env
+composer install
 ```
 
 ### test url
