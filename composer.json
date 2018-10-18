@@ -8,7 +8,9 @@
         "symfony/console": "*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "*",
-        "symfony/yaml": "*"
+        "symfony/messenger": "*",
+        "symfony/yaml": "*",
+        "ext-json": "*"
     },
     "require-dev": {
         "behat/behat": "^3.5",

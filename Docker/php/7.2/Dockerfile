@@ -17,6 +17,7 @@ COPY php-fpm.d/www.conf $PHP_INI_DIR/../php-fpm.d/www.conf
 #entry point
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN apt-get update && apt-get install -y unzip
 
 # Set up the command arguments.
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
