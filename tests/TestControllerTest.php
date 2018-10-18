@@ -2,7 +2,9 @@
 
 namespace App\Tests;
 
-use App\Controller\TestController;
+
+
+use App\UI\Http\Rest\Controller\TestController;
 
 /**
  * Class TestControllerTest

@@ -7,3 +7,11 @@ framework:
         routing:
             # Route your messages to the transports
             # 'App\Message\YourMessage': amqp
+
+        # The bus that is going to be injected when injecting MessageBusInterface:
+        default_bus: 'messenger.bus.commands'
+
+        # Create buses
+        buses:
+            messenger.bus.commands: ~
+            messenger.bus.events: ~

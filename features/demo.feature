@@ -11,3 +11,7 @@ Feature:
     When I send a GET request to "/test"
     Then the JSON node a should be equal to b
     Then the JSON node test should not be null
+
+  Scenario: get test2
+    When I send a GET request to "/test2"
+    And print last JSON response
